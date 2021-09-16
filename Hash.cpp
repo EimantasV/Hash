@@ -31,7 +31,7 @@ int main()
     {
         for(int i =0;i<64;i++)
         {
-            switch (((int)inp[a]+i)%8)
+            switch (((int)inp[a]+i)%15)
             {
                 case 0:
                     hash[i] ^= inp[i%inp.length()];
@@ -56,7 +56,29 @@ int main()
                     break;
                 case 7:
                     hash[i] ^= (~inp[i%inp.length()]>>1);
-                    break;     
+                    break;
+                case 8:
+                    hash[i] ^= (~inp[i%inp.length()]>>2);
+                    break;
+                case 9:
+                    hash[i] ^= (~inp[i%inp.length()]>>3);
+                    break;
+                case 10:
+                    hash[i] ^= (~inp[i%inp.length()]<<2);
+                    break;
+                case 11:
+                    hash[i] ^= (~inp[i%inp.length()]<<3);
+                    break;
+                case 12:
+                    hash[i] ^= (~inp[i%inp.length()]>>1<<1);
+                    break;
+                case 13:
+                    hash[i] ^= (~inp[i%inp.length()]>>2<<2);
+                    break;
+                case 14:
+                    hash[i] ^= (~inp[i%inp.length()]>>3<<3);
+                    break;
+     
             }
         }
     }
@@ -64,7 +86,7 @@ int main()
     cout << "Hash: \n";
     for(int i =0;i<64;i++)
     {
-        cout << hash[i];
+        cout << hex<< ((int)hash[i]/16+8);
     }
     cout << endl<<endl;
 
