@@ -26,20 +26,41 @@ int main()
             hash[i%64]^=inp[i];
         }
     }
-    // }
 
-    // for(int a=0;a<inp.length();a++)
-    // {
-    //     if(a<64)
-    //     {
-    //         cout << (a%inp.length()) << endl;
-    //         hash[a] = inp[a%inp.length()];
-    //     }
-    //     for(int i =0;i<64;i++)
-    //     {
-    //         //hash[i]^=inp[a];
-    //     }
-    // }
+    for(int a=0;a<inp.length();a++)
+    {
+        for(int i =0;i<64;i++)
+        {
+            switch (((int)inp[a]+i)%8)
+            {
+                case 0:
+                    hash[i] ^= inp[i%inp.length()];
+                    break;
+                case 1:
+                    hash[i] ^= (inp[i%inp.length()]>>2);
+                    break;
+                case 2:
+                    hash[i] ^= (inp[i%inp.length()]>>1);
+                    break;
+                case 3:
+                    hash[i] ^= (inp[i%inp.length()]<<2);
+                    break;
+                case 4:
+                    hash[i] ^= (inp[i%inp.length()]<<1);
+                    break;
+                case 5:
+                    hash[i] ^= (~inp[i%inp.length()]);
+                    break;
+                case 6:
+                    hash[i] ^= (~inp[i%inp.length()]<<1);
+                    break;
+                case 7:
+                    hash[i] ^= (~inp[i%inp.length()]>>1);
+                    break;     
+            }
+        }
+    }
+
     cout << "Hash: \n";
     for(int i =0;i<64;i++)
     {
