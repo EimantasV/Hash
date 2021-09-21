@@ -26,12 +26,14 @@ output = compressToHex(hash);
 
 - [x] Nepriklausomai nuo input, output dydis vienodas.
 - [x] Tas pats input duoda tą patį output.
+- [x] 100000 Nėra koliziju.
 
-#### Speed testai:
+### Speed testai:
 
-Laikas per kurį suhashavo konstitucija.txt:
+Laikas per kurį suhashavo konstitucija.txt kiekvieną eilutę:
 
-| hash funckija | total time (sec.) |
+| hash funckija | total time (ms) |
 | ------------- | ----------------- |
-| Mano          |                   |
-| MDA5          |                   |
+| Mano          | 75                |
+| SHA256        | 4                 |
+
