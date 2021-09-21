@@ -38,21 +38,21 @@ Laikas per kurį suhashavo konstitucija.txt kiekvieną eilutę:
 | SHA256        | 4                 |
 
 ### Skirtingumas:
-
-- Čia skaiciuojama kiek primo hash'o bitų nesutampa su kito hash'o bitais. Ir tai išreiskiama procentais.
+<br/>
+Čia skaiciuojama kiek primo hash'o bitų nesutampa su kito hash'o bitais. Ir tai išreiskiama procentais.
 - Bit difference min: 15.2344%
 - Bit difference max: 75.3906%
 - Bit difference avg: 49.421%
-
-- Čia sumuojami atstumai tarp simbolių ir suma padalinama iš (64*15). hash'ų "0000....0000" ir "ffff.....ffff" skirtumas yra 100%;
+<br/>
+Čia sumuojami atstumai tarp simbolių ir suma padalinama iš (64*15). hash'ų "0000....0000" ir "ffff.....ffff" skirtumas yra 100%;
 - Hex difference min: 5%
 - Hex difference max: 61.875%
 - Hex difference avg: 31.4772%
-
+<br/>
 ### Trukumai:
 - Lėtas.
 - Labai lėtas, jei didelis input.
-
+<br/>
 ### Privalumai:
 - Veikia. :D
 - Lengva patobulinti.
