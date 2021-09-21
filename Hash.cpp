@@ -1,87 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-using namespace std;
-string Hash(string inp, bool isBinary);
-
-int main(int argc, char *argv[])
+#include<string>
+std::string Hash(std::string inp, bool isBinary)
 {
-    if (argc == 1)
-    {
-        cout << "Error: no args. Try (-t \"ExampleFile.txt\") or (-m \"your text\") " << endl;
-        system("pause");
-        return 0;
-    }
-
-    string FileLoc;
-    string inp;
-    bool isFromText = true;
-    bool isBinary = false;
-    for (int i = 1; i < argc; i++)
-    {
-        //cout << argv[i]<<endl;
-
-        if (argv[i][0] == '-' && argv[i][1] == 't')
-        {
-            if (i + 1 < argc)
-            {
-                FileLoc = argv[i + 1];
-            }
-            else
-            {
-                cout << "Error: no input arg." << endl;
-                system("pause");
-                return 0;
-            }
-        }
-        else if (argv[i][0] == '-' && argv[i][1] == 'm')
-        {
-            if (i + 1 < argc)
-            {
-                inp = argv[i + 1];
-                isFromText = false;
-            }
-            else
-            {
-                cout << "Error: no input arg." << endl;
-                system("pause");
-                return 0;
-            }
-        }
-
-        if (argv[i][0] == '-' && argv[i][1] == 'b')
-        {
-            isBinary=true;
-        }
-    }
-
-    if (isFromText)
-    {
-        ifstream GetTxt(FileLoc);
-        if (!GetTxt.is_open())
-        {
-            cout << "Error: couldn't open file." << endl;
-            system("pause");
-            return 0;
-        }
-
-        stringstream strStream;
-        strStream << GetTxt.rdbuf(); //read the file
-        string inp = strStream.str();
-
-        cout << Hash(inp,isBinary) << endl;
-    }
-    else
-    {
-        cout << Hash(inp,isBinary) << endl;
-    }
-
-    system("pause");
-    return 0;
-}
-
-string Hash(string inp, bool isBinary)
-{
+    if (inp=="")inp="absdthu45th389wi";
     char hash[64] = {(char)0};
     for (int a = 0; a < inp.length(); a++)
     {
@@ -138,13 +58,13 @@ string Hash(string inp, bool isBinary)
         }
     }
 
-    string out = "";
+    std::string out = "";
     if (isBinary)
     {
         for (int i = 0; i < 64; i++) // convert to hex
         {
             int t = ((int)hash[i]) / 16 + 8;
-            cout << (t&1) << endl;
+            //cout << (t&1) << endl;
             if((t&8)>0)
             {
                 out += '1';
