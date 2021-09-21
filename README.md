@@ -44,7 +44,7 @@ Laikas per kurį suhashavo konstitucija.txt kiekvieną eilutę:
 - Bit difference max: 75.3906%
 - Bit difference avg: 49.421%
 
-Čia sumuojami atstumai tarp simbolių ir suma padalinama iš (64*15). hash'ų "0000....0000" ir "ffff.....ffff" skirtumas yra 100%;
+Čia sumuojami atstumai tarp simbolių ir suma padalinama iš (64*15). Hash'ų "0000....0000" ir "ffff.....ffff" skirtumas yra 100%;
 - Hex difference min: 5%
 - Hex difference max: 61.875%
 - Hex difference avg: 31.4772%
