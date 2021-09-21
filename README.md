@@ -1,5 +1,5 @@
 # Hash
-Idea:
+##Idėja:
 ```
 hash[64]; // output
 
