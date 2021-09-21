@@ -29,3 +29,9 @@ output = compressToHex(hash);
 
 #### Speed testai:
 
+Laikas per kurį suhashavo konstitucija.txt:
+
+| hash funckija | total time (sec.) |
+-------------------------------------
+| Mano          |                   |
+| MDA5          |                   |
