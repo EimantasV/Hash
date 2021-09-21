@@ -26,7 +26,7 @@ output = compressToHex(hash);
 
 - [x] Nepriklausomai nuo input, output dydis vienodas.
 - [x] Tas pats input duoda tą patį output.
-- [x] 100000 Nėra koliziju.
+- [x] 100000 porų hash'uose nėra koliziju.
 
 ### Speed testai:
 
@@ -37,3 +37,16 @@ Laikas per kurį suhashavo konstitucija.txt kiekvieną eilutę:
 | Mano          | 75                |
 | SHA256        | 4                 |
 
+### Skirtingumas:
+
+- Bit difference min: 15.2344%
+- Bit difference max: 75.3906%
+- Bit difference avg: 49.421%
+
+### Trukumai:
+- Lėtas.
+- Labai lėtas, jei didelis input.
+
+### Privalumai:
+- Veikia. :D
+- Lengva patobulinti.
