@@ -26,3 +26,6 @@ output = compressToHex(hash);
 
 - [x] Nepriklausomai nuo input, output dydis vienodas.
 - [x] Tas pats input duoda tą patį output.
+
+#### Speed testai:
+
