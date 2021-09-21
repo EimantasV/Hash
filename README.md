@@ -1,5 +1,5 @@
 # Hash
-##Idėja:
+## Idėja:
 ```
 hash[64]; // output
 
