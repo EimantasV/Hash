@@ -22,3 +22,7 @@ foreach (character in input)
 
 output = compressToHex(hash);
 ```
+## Testai:
+
+- [x] Nepriklausomai nuo input, output dydis vienodas.
+- [x] Tas pats input duoda tą patį output.
