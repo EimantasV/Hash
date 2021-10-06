@@ -65,6 +65,40 @@ int main(int argc, char *argv[])
     {
         std::cout << HashBit(inp)<<std::endl;
     }
+    else if (isFromText && !isBinary)
+    {
+        std::ifstream GetTxt(FileLoc);
+        if (!GetTxt.is_open())
+        {
+            std::cout << "Error: couldn't open file." << std::endl;
+            system("pause");
+            return 0;
+        }
+
+        std::stringstream strStream;
+        strStream << GetTxt.rdbuf(); //read the file
+        std::string inp = strStream.str();
+
+        std::cout << HashHex(inp) << std::endl;
+        GetTxt.close();
+    }
+    else 
+    {
+        std::ifstream GetTxt(FileLoc);
+        if (!GetTxt.is_open())
+        {
+            std::cout << "Error: couldn't open file." << std::endl;
+            system("pause");
+            return 0;
+        }
+
+        std::stringstream strStream;
+        strStream << GetTxt.rdbuf(); //read the file
+        std::string inp = strStream.str();
+
+        std::cout << HashBit(inp) << std::endl;
+        GetTxt.close();
+    }
 
     
 
