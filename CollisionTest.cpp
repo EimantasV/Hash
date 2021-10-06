@@ -1,7 +1,7 @@
 #include<fstream>
 #include<iostream>
 #include<chrono>
-#include "Hash.cpp"
+#include "HashNew.cpp"
 using namespace std;
 
 int main()
@@ -15,7 +15,16 @@ int main()
         string a,b;
         getline(inp,a);
         getline(inp,b);
-        if(Hash(a,false)==Hash(b,false))
+        bool collision =true;
+        for(int i= 0;i<32;i++)
+        {
+            if(Hash(a)[i]!=Hash(b)[i])
+            {
+                collision=false;
+                break;
+            }
+        }
+        if(collision)
         {
             collisions++;
             cout << "COLLISION line: "<< n*2<<endl;

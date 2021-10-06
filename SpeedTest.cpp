@@ -1,7 +1,7 @@
 #include<fstream>
 #include<iostream>
 #include<chrono>
-#include "Hash.cpp"
+#include "HashNew.cpp"
 
 #include "sha256.cpp"
 using namespace std;
@@ -21,7 +21,8 @@ int main()
     for(int i =0;i<n;i++)
     {
         
-         Hash(lines[i],false);
+        HashHex(lines[i]);
+        
     }
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
