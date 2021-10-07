@@ -3,7 +3,7 @@
 #include <sstream>
 #include<string>
 #include <Windows.h>
-#include "HashNew.cpp"
+#include "HashNew.h"
 #include <bitset>
 
 int main(int argc, char *argv[])

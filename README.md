@@ -1,4 +1,22 @@
-# Hash
+# Naujas Hash:
+
+failas HashNew.h
+
+usage example - main2.cpp 
+
+arba simply:
+```
+#import "HashNew.h"
+
+...
+
+  std::string result1 = HashHex("your input"); // gauni hex'u hash'a
+  std::string result2 = HashBit("your input"); // gauni bit'u hash'a
+
+```
+
+
+## Senas Hash:
 ## Idėja:
 ```
 hash[64]; // output
