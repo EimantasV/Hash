@@ -1,9 +1,11 @@
 #include<fstream>
 #include<iostream>
 #include<chrono>
-#include "HashNew.cpp"
-
+#include "HashNew.h"
+#include "Hash.cpp"
 #include "sha256.cpp"
+#include "MartynoHash.h"
+#include "TomoHash.h"
 using namespace std;
 
 int main()
@@ -16,31 +18,24 @@ int main()
         getline(inp,lines[n]);
         n++;
     }
-
-    auto start_time = std::chrono::high_resolution_clock::now();
-    for(int i =0;i<n;i++)
+    cout << my_hash(lines[0]) << endl;
+    std::chrono::nanoseconds time;
+    for(int i=0;i<100;i++)
     {
-        
-        HashHex(lines[i]);
-        
+        auto start_time = std::chrono::high_resolution_clock::now();
+        for(int i =0;i<n;i++)
+        {
+            
+            TomoHash(lines[i]);
+            
+        }
+        auto end_time = std::chrono::high_resolution_clock::now();
+        time += end_time - start_time;
     }
-    auto end_time = std::chrono::high_resolution_clock::now();
-    auto time = end_time - start_time;
 
-    std::cout << "Mano hash: " << time/std::chrono::milliseconds(1) << "ms.\n";
+    std::cout << "hash: " << time/100/std::chrono::microseconds(1) << " microsec.\n";
 
 
-
-    start_time = std::chrono::high_resolution_clock::now();
-    for(int i =0;i<n;i++)
-    {
-        sha256(lines[i]);
-          
-    }
-     end_time = std::chrono::high_resolution_clock::now();
-     time = end_time - start_time;
-
-    std::cout << "sha256 time: " << time/std::chrono::milliseconds(1) << "ms.\n";
     inp.close();
     system("pause");
     return 0;
