@@ -2,7 +2,7 @@
 buvo naudotas -O3 tag. </br>
 100x average of konstitucija.txt </br>
 Rezultatai: </br>
-| Hash | konstitucija.txt time microseconds | Hard collision test collisions/hashes | Binary Min, Max, Avg -------- | Hex Min, Max, Avg --------- |
+| Hash | konstitucija.txt time microseconds | Hard collision test collisions/hashes | Binary difference Min, Max, Avg | Hex difference Min, Max, Avg |
 | --- | --- | --- | --- | --- |
 | SHA256 | 3150 µs | 0 / 1.2mln | 35.9375%, 62.8906%, 50.005% | 35.1562%, 66.2109%, 50.014% |
 | Eimanto Vinciūno V0.1 | 73362 µs | 224038 / 1.2mln | 15.2344%, 75.3906%, 49.421% | 9.375%, 80.8594%, 48.402% |
@@ -13,4 +13,5 @@ Rezultatai: </br>
 | Margaritos Paulikaitės | 52445 µs | 101755 / 1.2mln | 0%, 0%, 0% | 0%, 0%, 0% |
 | Igno Biekšos | 4971 µs | 42 / 1.2mln | 25%, 72.2656%, 49.5893% | 13.8672%, 82.4219%, 50.0563% |
 
-
+Hard collision test:</br>
+Tikrina kiekvieną hash'ą su visais 1.2mln hash'ais.
