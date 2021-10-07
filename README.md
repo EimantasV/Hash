@@ -1,4 +1,4 @@
-# HASH'U BATTLE ROYALE
+# HASH'Ų BATTLE ROYALE
 buvo naudotas -O3 tag. </br>
 100x average of konstitucija.txt </br>
 Rezultatai: </br>
