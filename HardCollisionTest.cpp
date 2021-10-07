@@ -2,7 +2,14 @@
 #include<iostream>
 #include<chrono>
 #include<unordered_set>
-#include "HashNew.cpp"
+//#include "HashNew.h"
+//#include "sha256.cpp"
+//#include "Hash.cpp"
+//#include "MartynoHash.h"
+//#include "TomoHash.h"
+//#include "VytautoHash.h"
+#include "MargaritosHash.h"
+//#include "IgnoHash.h"
 using namespace std;
 
 int main()
@@ -12,7 +19,7 @@ int main()
     int n=0;
     int collisions=0;
     unordered_set<string> test;
-    test.reserve(1000000);
+    test.reserve(1200000);
     while(!inp.eof())
     {
         string a;
@@ -28,10 +35,11 @@ int main()
         //     //cout << "COLLISION: " << a <<endl;
         //     //break;
         // }
-
-        if(test.find(HashHex(a))==test.end())
+        string hash;//= hashFun(a);
+        HASH(a,hash);
+        if(test.find(hash)==test.end())
         {
-            test.insert(HashHex(a));
+            test.insert(hash);
         }
         else
         {
@@ -46,7 +54,7 @@ int main()
         {
             cout <<"line: "<< n<<endl;
         }
-        //if(n>100000)break;
+        //if(n>300000)break;
     }
 
 

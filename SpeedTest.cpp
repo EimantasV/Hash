@@ -1,11 +1,14 @@
 #include<fstream>
 #include<iostream>
 #include<chrono>
-#include "HashNew.h"
-#include "Hash.cpp"
-#include "sha256.cpp"
-#include "MartynoHash.h"
-#include "TomoHash.h"
+// #include "HashNew.h"
+// #include "Hash.cpp"
+// #include "sha256.cpp"
+// #include "MartynoHash.h"
+// #include "TomoHash.h"
+// #include "VytautoHash.h"
+//#include "MargaritosHash.h"
+#include "IgnoHash.h"
 using namespace std;
 
 int main()
@@ -18,15 +21,17 @@ int main()
         getline(inp,lines[n]);
         n++;
     }
-    cout << my_hash(lines[0]) << endl;
+
+    cout << hashFun(lines[0]) << endl;
     std::chrono::nanoseconds time;
     for(int i=0;i<100;i++)
     {
         auto start_time = std::chrono::high_resolution_clock::now();
         for(int i =0;i<n;i++)
         {
-            
-            TomoHash(lines[i]);
+            hashFun(lines[i]);
+            //HASH(lines[i],out);
+            //transformedText(lines[i]);
             
         }
         auto end_time = std::chrono::high_resolution_clock::now();
