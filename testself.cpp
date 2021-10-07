@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include<string>
+#include <string>
 #include <Windows.h>
 #include "HashNew.h"
 #include <bitset>
-#include<unordered_set>
+#include <unordered_set>
 
 int main()
 {
